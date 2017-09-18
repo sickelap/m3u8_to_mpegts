@@ -48,7 +48,7 @@ function getIt(options, done) {
       fs.writeFileSync(path.resolve(cwd, playlistFilename), masterPlaylist.manLines.join('\n'));
       // parse the mediaplaylists for segments and targetDuration
       for (i = 0; i < mediaPlaylists.length; i++) {
-        parse.parseMediaPlaylist(masterPlaylist.medPlaylists[i], doneParsing, path.dirname(masterPlaylist.uri), cwd);
+        parse.parseMediaPlaylist(masterPlaylist.medPlaylists[i], doneParsing, path.dirname(masterPlaylist.medPlaylists[i].uri), cwd);
       }
       masterPlaylist.mediaPlaylists = [];
     }
